@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finora AI - Secure Fintech Automation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f1f5f9;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 20px 0;
+            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #14b8a6 0%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #14b8a6 0%, #0891b2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(20, 184, 166, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(148, 163, 184, 0.1);
+            color: #cbd5e1;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(148, 163, 184, 0.2);
+        }
+
+        /* Hero */
+        .hero {
+            padding-top: 120px;
+            padding-bottom: 120px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #14b8a6 0%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        /* Features */
+        .features {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .card:hover {
+            border-color: rgba(20, 184, 166, 0.3);
+            background: rgba(15, 23, 42, 0.7);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .feature-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-text {
+            font-size: 14px;
+            color: #cbd5e1;
+        }
+
+        /* How It Works */
+        .how {
+            padding-top: 80px;
+            padding-bottom: 80px;
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #14b8a6 0%, #0891b2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 16px;
+        }
+
+        .step-arrow {
+            font-size: 32px;
+            color: #14b8a6;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding-top: 80px;
+            padding-bottom: 80px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.1), rgba(251, 191, 36, 0.1));
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            font-size: 16px;
+            color: #cbd5e1;
+            margin-bottom: 32px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 420px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .modal-header h2 {
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #cbd5e1;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 8px;
+            color: #f1f5f9;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #14b8a6;
+            box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+        }
+
+        .form-error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #fca5a5;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .form-success {
+            background: rgba(34, 197, 94, 0.1);
+            color: #86efac;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .modal-footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 14px;
+            color: #cbd5e1;
+        }
+
+        .modal-footer button {
+            background: none;
+            border: none;
+            color: #14b8a6;
+            font-weight: 600;
+            cursor: pointer;
+            margin-left: 4px;
+        }
+
+        /* Footer */
+        footer {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            color: #94a3b8;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* Dashboard */
+        .dashboard {
+            display: none;
+        }
+
+        .dashboard.active {
+            display: block;
+        }
+
+        .dashboard-header {
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .dashboard-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-info {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            padding-bottom: 16px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            color: #14b8a6;
+            border-bottom-color: #14b8a6;
+        }
+
+        .page-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #cbd5e1;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #14b8a6 0%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .form-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        textarea.input-field {
+            font-family: monospace;
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .result-section {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .result-label {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            color: #cbd5e1;
+            letter-spacing: 0.5px;
+        }
+
+        .confidence-bar {
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            color: #f1f5f9;
+            background: linear-gradient(90deg, #14b8a6 0%, #14b8a6 50%, rgba(148, 163, 184, 0.1) 50%, rgba(148, 163, 184, 0.1) 100%);
+        }
+
+        .result-text {
+            font-size: 14px;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            background: rgba(34, 197, 94, 0.1);
+            color: #86efac;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(20, 184, 166, 0.2);
+            border-top-color: #14b8a6;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-container {
+                flex-direction: column;
+            }
+
+            .modal-content {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing" class="landing active">
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">Finora AI</div>
+                    <div class="nav-buttons">
+                        <button class="btn btn-secondary" onclick="openLoginModal()">लॉगिन / Login</button>
+                        <button class="btn btn-primary" onclick="openSignupModal()">शुरुआत करें / Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>
+                        <span class="gradient-text">भारत के लिए सुरक्षित AI</span><br>
+                        Secure AI for Indian Fintech
+                    </h1>
+                    <p>
+                        स्वचालित वित्तीय विश्लेषण, सत्यापित आउटपुट, और विश्वसनीय ऑटोमेशन<br>
+                        Automated financial analysis, verified outputs, and trusted automation
+                    </p>
+                    <button class="btn btn-primary" onclick="openSignupModal()" style="font-size: 16px; padding: 14px 32px;">
+                        अभी शुरू करें / Start Now
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">मुख्य विशेषताएं / Key Features</h2>
+                <div class="grid">
+                    <div class="card">
+                        <div class="feature-icon">🔒</div>
+                        <h3 class="feature-title">सुरक्षित / Secure</h3>
+                        <p class="feature-text">एंड-टू-एंड एन्क्रिप्शन और RBAC सुरक्षा के साथ बैंक-ग्रेड सुरक्षा।</p>
+                    </div>
+                    <div class="card">
+                        <div class="feature-icon">🤖</div>
+                        <h3 class="feature-title">AI संचालित / AI Powered</h3>
+                        <p class="feature-text">OpenAI के साथ उन्नत LLM विश्लेषण और स्वचालित सत्यापन।</p>
+                    </div>
+                    <div class="card">
+                        <div class="feature-icon">✓</div>
+                        <h3 class="feature-title">सत्यापित / Verified</h3>
+                        <p class="feature-text">बहु-परत सत्यापन और विश्वसनीय आउटपुट फिल्टरिंग।</p>
+                    </div>
+                    <div class="card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">तेज़ / Fast</h3>
+                        <p class="feature-text">रीयल-टाइम विश्लेषण और तत्काल परिणाम।</p>
+                    </div>
+                    <div class="card">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">विश्लेषण / Analytics</h3>
+                        <p class="feature-text">विस्तृत ऑडिट लॉग और व्यापक रिपोर्टिंग।</p>
+                    </div>
+                    <div class="card">
+                        <div class="feature-icon">🌍</div>
+                        <h3 class="feature-title">द्विभाषी / Bilingual</h3>
+                        <p class="feature-text">अंग्रेजी और हिंदी दोनों में पूर्ण समर्थन।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how">
+            <div class="container">
+                <h2 class="section-title">कैसे काम करता है / How It Works</h2>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>डेटा अपलोड / Upload</h4>
+                        <p>अपना वित्तीय डेटा सुरक्षित रूप से अपलोड करें।</p>
+                    </div>
+                    <div class="step-arrow">→</div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>AI विश्लेषण / Analyze</h4>
+                        <p>AI तुरंत डेटा का विश्लेषण करता है।</p>
+                    </div>
+                    <div class="step-arrow">→</div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>सत्यापन / Verify</h4>
+                        <p>बहु-परत सत्यापन और फिल्टरिंग।</p>
+                    </div>
+                    <div class="step-arrow">→</div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h4>परिणाम / Results</h4>
+                        <p>विश्वसनीय, सत्यापित आउटपुट प्राप्त करें।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta">
+            <div class="container">
+                <h2>आज ही शुरू करें / Get Started Today</h2>
+                <p>भारतीय फिनटेक के लिए डिजाइन किया गया, सुरक्षित और विश्वसनीय।</p>
+                <button class="btn btn-primary" onclick="openSignupModal()" style="font-size: 16px; padding: 14px 32px;">
+                    निःशुल्क शुरू करें / Start Free
+                </button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <p>© 2026 Finora AI | भारत से | Made in India 🇮🇳</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="dashboard">
+        <div class="dashboard-header">
+            <div class="container">
+                <div class="dashboard-header-content">
+                    <div class="logo">Finora AI</div>
+                    <div class="user-info">
+                        <span id="userName">👋 User</span>
+                        <button class="btn btn-secondary" onclick="logout()">लॉगआउट / Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="padding-top: 20px; padding-bottom: 40px;">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('overview')">📊 अवलोकन / Overview</button>
+                <button class="tab-btn" onclick="switchTab('analysis')">🤖 विश्लेषण / Analysis</button>
+                <button class="tab-btn" onclick="switchTab('history')">📝 इतिहास / History</button>
+            </div>
+
+            <!-- Overview Tab -->
+            <div id="overview-tab">
+                <h1 class="page-title">डैशबोर्ड / Dashboard</h1>
+                <div class="grid">
+                    <div class="card stat-card">
+                        <div class="stat-label">कुल अनुरोध / Total Requests</div>
+                        <div class="stat-value" id="totalRequests">0</div>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-label">सत्यापित / Verified</div>
+                        <div class="stat-value" id="verifiedRequests">0</div>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-label">लंबित / Pending</div>
+                        <div class="stat-value" id="pendingRequests">0</div>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-label">औसत विश्वास / Avg Confidence</div>
+                        <div class="stat-value" id="avgConfidence">0%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analysis Tab -->
+            <div id="analysis-tab" style="display: none;">
+                <h1 class="page-title">AI विश्लेषण / AI Analysis</h1>
+                <div class="grid" style="grid-template-columns: 1fr 1fr;">
+                    <div class="card">
+                        <h3 class="form-title">डेटा सबमिट करें / Submit Data</h3>
+                        <div id="analysisError" class="form-error" style="display: none;"></div>
+                        <form onsubmit="analyzeData(event)">
+                            <div class="form-group">
+                                <label>प्रकार / Type</label>
+                                <select id="analysisType" class="input-field">
+                                    <option value="transaction">लेन-देन / Transaction</option>
+                                    <option value="report">रिपोर्ट / Report</option>
+                                    <option value="compliance">अनुपालन / Compliance</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>इनपुट डेटा / Input Data</label>
+                                <textarea id="analysisInput" class="input-field" placeholder="अपना डेटा यहाँ पेस्ट करें / Paste your data here" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;" id="analyzeBtn">
+                                विश्लेषण करें / Analyze
+                            </button>
+                        </form>
+                    </div>
+                    <div class="card">
+                        <h3 class="form-title">परिणाम / Results</h3>
+                        <div id="resultContainer" style="text-align: center; color: #94a3b8;">
+                            परिणाम यहाँ दिखाई देंगे / Results will appear here
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History Tab -->
+            <div id="history-tab" style="display: none;">
+                <h1 class="page-title">विश्लेषण इतिहास / Analysis History</h1>
+                <div class="card">
+                    <p style="text-align: center; color: #94a3b8;">
+                        आपके विश्लेषण का इतिहास यहाँ दिखाई देगा / Your analysis history will appear here
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>लॉगिन / Login</h2>
+                <button class="close-btn" onclick="closeLoginModal()">×</button>
+            </div>
+            <p style="font-size: 14px; color: #cbd5e1; margin-bottom: 24px;">अपने खाते में साइन इन करें</p>
+            <div id="loginError" class="form-error" style="display: none;"></div>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>ईमेल / Email</label>
+                    <input type="email" id="loginEmail" class="input-field" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>पासवर्ड / Password</label>
+                    <input type="password" id="loginPassword" class="input-field" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;" id="loginBtn">
+                    लॉगिन करें / Login
+                </button>
+            </form>
+            <div class="modal-footer">
+                खाता नहीं है? <button onclick="switchModal('signup')">यहाँ साइन अप करें / Sign up here</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>साइन अप / Sign Up</h2>
+                <button class="close-btn" onclick="closeSignupModal()">×</button>
+            </div>
+            <p style="font-size: 14px; color: #cbd5e1; margin-bottom: 24px;">एक नया खाता बनाएं</p>
+            <div id="signupError" class="form-error" style="display: none;"></div>
+            <div id="signupSuccess" class="form-success" style="display: none;"></div>
+            <form onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label>नाम / Name</label>
+                    <input type="text" id="signupName" class="input-field" placeholder="आपका नाम" required>
+                </div>
+                <div class="form-group">
+                    <label>ईमेल / Email</label>
+                    <input type="email" id="signupEmail" class="input-field" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>पासवर्ड / Password</label>
+                    <input type="password" id="signupPassword" class="input-field" placeholder="••••••••" required>
+                </div>
+                <div class="form-group">
+                    <label>पासवर्ड की पुष्टि / Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" class="input-field" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;" id="signupBtn">
+                    खाता बनाएं / Create Account
+                </button>
+            </form>
+            <div class="modal-footer">
+                पहले से खाता है? <button onclick="switchModal('login')">यहाँ लॉगिन करें / Login here</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Store users in localStorage
+        const users = JSON.parse(localStorage.getItem('finora_users') || '[]');
+        let currentUser = null;
+
+        function openLoginModal() {
+            document.getElementById('loginModal').classList.add('active');
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').classList.remove('active');
+            clearLoginForm();
+        }
+
+        function openSignupModal() {
+            document.getElementById('signupModal').classList.add('active');
+        }
+
+        function closeSignupModal() {
+            document.getElementById('signupModal').classList.remove('active');
+            clearSignupForm();
+        }
+
+        function switchModal(type) {
+            if (type === 'login') {
+                closeSignupModal();
+                openLoginModal();
+            } else {
+                closeLoginModal();
+                openSignupModal();
+            }
+        }
+
+        function clearLoginForm() {
+            document.getElementById('loginEmail').value = '';
+            document.getElementById('loginPassword').value = '';
+            document.getElementById('loginError').style.display = 'none';
+        }
+
+        function clearSignupForm() {
+            document.getElementById('signupName').value = '';
+            document.getElementById('signupEmail').value = '';
+            document.getElementById('signupPassword').value = '';
+            document.getElementById('signupConfirmPassword').value = '';
+            document.getElementById('signupError').style.display = 'none';
+            document.getElementById('signupSuccess').style.display = 'none';
+        }
+
+        function handleSignup(e) {
+            e.preventDefault();
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('signupConfirmPassword').value;
+
+            const errorEl = document.getElementById('signupError');
+            const successEl = document.getElementById('signupSuccess');
+
+            errorEl.style.display = 'none';
+            successEl.style.display = 'none';
+
+            if (password !== confirmPassword) {
+                errorEl.textContent = 'Passwords do not match';
+                errorEl.style.display = 'block';
+                return;
+            }
+
+            if (users.find(u => u.email === email)) {
+                errorEl.textContent = 'User already exists';
+                errorEl.style.display = 'block';
+                return;
+            }
+
+            users.push({ id: Date.now(), name, email, password });
+            localStorage.setItem('finora_users', JSON.stringify(users));
+
+            successEl.textContent = 'Account created! Logging you in...';
+            successEl.style.display = 'block';
+
+            setTimeout(() => {
+                currentUser = { id: users[users.length - 1].id, name, email };
+                localStorage.setItem('finora_currentUser', JSON.stringify(currentUser));
+                closeSignupModal();
+                showDashboard();
+            }, 1500);
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const errorEl = document.getElementById('loginError');
+
+            errorEl.style.display = 'none';
+
+            const user = users.find(u => u.email === email && u.password === password);
+            if (!user) {
+                errorEl.textContent = 'Invalid email or password';
+                errorEl.style.display = 'block';
+                return;
+            }
+
+            currentUser = { id: user.id, name: user.name, email: user.email };
+            localStorage.setItem('finora_currentUser', JSON.stringify(currentUser));
+            closeLoginModal();
+            showDashboard();
+        }
+
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('finora_currentUser');
+            document.getElementById('dashboard').classList.remove('active');
+            document.getElementById('landing').classList.add('active');
+        }
+
+        function showDashboard() {
+            document.getElementById('landing').classList.remove('active');
+            document.getElementById('dashboard').classList.add('active');
+            document.getElementById('userName').textContent = '👋 ' + currentUser.name;
+            switchTab('overview');
+            loadDashboardStats();
+        }
+
+        function switchTab(tab) {
+            document.querySelectorAll('[id$="-tab"]').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(tab + '-tab').style.display = 'block';
+            event.target.classList.add('active');
+        }
+
+        function loadDashboardStats() {
+            const stats = JSON.parse(localStorage.getItem('finora_stats_' + currentUser.id) || '{"total": 0, "verified": 0, "pending": 0, "avgConfidence": 0}');
+            document.getElementById('totalRequests').textContent = stats.total || 0;
+            document.getElementById('verifiedRequests').textContent = stats.verified || 0;
+            document.getElementById('pendingRequests').textContent = stats.pending || 0;
+            document.getElementById('avgConfidence').textContent = (stats.avgConfidence || 0) + '%';
+        }
+
+        function analyzeData(e) {
+            e.preventDefault();
+            const input = document.getElementById('analysisInput').value;
+            const type = document.getElementById('analysisType').value;
+            const errorEl = document.getElementById('analysisError');
+            const resultEl = document.getElementById('resultContainer');
+            const btn = document.getElementById('analyzeBtn');
+
+            errorEl.style.display = 'none';
+
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span> Processing...';
+
+            // Simulate AI analysis
+            setTimeout(() => {
+                try {
+                    const mockResult = {
+                        confidence: 0.85 + Math.random() * 0.15,
+                        summary: `Analyzed ${type} data: Input length ${input.length} characters. Data structure validated. No anomalies detected. System recommends approval.`,
+                        qualityRating: 'Excellent'
+                    };
+
+                    resultEl.innerHTML = `
+                        <div class="result-section">
+                            <h4 class="result-label">विश्वास स्कोर / Confidence</h4>
+                            <div class="confidence-bar" style="background: linear-gradient(90deg, #14b8a6 0%, #14b8a6 ${mockResult.confidence * 100}%, rgba(148, 163, 184, 0.1) ${mockResult.confidence * 100}%, rgba(148, 163, 184, 0.1) 100%);">
+                                ${(mockResult.confidence * 100).toFixed(1)}%
+                            </div>
+                        </div>
+                        <div class="result-section">
+                            <h4 class="result-label">सारांश / Summary</h4>
+                            <p class="result-text">${mockResult.summary}</p>
+                        </div>
+                        <div class="result-section">
+                            <h4 class="result-label">गुणवत्ता / Quality</h4>
+                            <span class="badge">${mockResult.qualityRating}</span>
+                        </div>
+                    `;
+
+                    // Update stats
+                    const stats = JSON.parse(localStorage.getItem('finora_stats_' + currentUser.id) || '{"total": 0, "verified": 0, "pending": 0, "avgConfidence": 0}');
+                    stats.total = (stats.total || 0) + 1;
+                    stats.verified = (stats.verified || 0) + 1;
+                    stats.avgConfidence = Math.round(((stats.avgConfidence * (stats.verified - 1)) + (mockResult.confidence * 100)) / stats.verified);
+                    localStorage.setItem('finora_stats_' + currentUser.id, JSON.stringify(stats));
+                    loadDashboardStats();
+
+                    document.getElementById('analysisInput').value = '';
+                } catch (error) {
+                    errorEl.textContent = 'Analysis failed: ' + error.message;
+                    errorEl.style.display = 'block';
+                }
+
+                btn.disabled = false;
+                btn.innerHTML = 'विश्लेषण करें / Analyze';
+            }, 2000);
+        }
+
+        // Check if user is already logged in
+        window.addEventListener('load', () => {
+            const savedUser = localStorage.getItem('finora_currentUser');
+            if (savedUser) {
+                currentUser = JSON.parse(savedUser);
+                showDashboard();
+            }
+        });
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const loginModal = document.getElementById('loginModal');
+            const signupModal = document.getElementById('signupModal');
+            if (event.target === loginModal) {
+                closeLoginModal();
+            }
+            if (event.target === signupModal) {
+                closeSignupModal();
+            }
+        }
+    </script>
+</body>
+</html>
