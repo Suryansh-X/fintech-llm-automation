@@ -1,4 +1,15 @@
 {
-  "buildCommand": "echo 'No build needed'",
-  "outputDirectory": "."
+  "buildCommand": "npm run build",
+  "outputDirectory": "client/dist",
+  "installCommand": "npm install && cd client && npm install",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://YOUR-BACKEND-URL/api/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
