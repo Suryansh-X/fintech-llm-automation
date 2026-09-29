@@ -1,12 +1,5 @@
 {
-  "buildCommand": "npm run build:client",
-  "outputDirectory": "client/dist",
-  "devCommand": "npm run dev",
-  "framework": "vite",
-  "functions": {
-    "api/**/*.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  }
+  "buildCommand": "echo 'No build needed'",
+  "outputDirectory": ".",
+  "public": true
 }
