@@ -4,16 +4,21 @@
   "description": "Secure modern LLM automation for fintech with multilayered pipeline",
   "type": "module",
   "main": "server/index.js",
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x"
+  },
   "scripts": {
     "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
     "server:dev": "nodemon --exec node --input-type=module server/index.js",
     "client:dev": "cd client && vite",
-    "build": "npm run build:client && npm run build:server",
+    "build": "npm run build:client",
     "build:client": "cd client && vite build",
     "build:server": "echo 'Backend ready for production'",
     "preview": "npm run build && node server/index.js",
     "test": "node --test server/**/*.test.js",
-    "lint": "eslint server client/src"
+    "lint": "eslint server client/src",
+    "start": "node server/index.js"
   },
   "keywords": ["fintech", "llm", "automation", "ai", "security"],
   "author": "Suryansh-X",
@@ -22,7 +27,7 @@
     "express": "^4.18.2",
     "axios": "^1.6.0",
     "dotenv": "^16.3.1",
-    "jsonwebtoken": "^9.1.0",
+    "jsonwebtoken": "^9.0.2",
     "bcryptjs": "^2.4.3",
     "pg": "^8.11.3",
     "cors": "^2.8.5",
@@ -30,8 +35,7 @@
     "express-rate-limit": "^7.1.5",
     "winston": "^3.11.0",
     "joi": "^17.11.0",
-    "openai": "^4.26.0",
-    "tf-node": "^1.0.0"
+    "openai": "^4.26.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.2",

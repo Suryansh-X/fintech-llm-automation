@@ -1,0 +1,19 @@
+{
+  "buildCommand": "npm run build:client",
+  "outputDirectory": "client/dist",
+  "devCommand": "npm run dev",
+  "framework": "vite",
+  "env": [
+    "OPENAI_API_KEY",
+    "JWT_SECRET",
+    "DATABASE_URL",
+    "NODE_ENV",
+    "FRONTEND_URL"
+  ],
+  "functions": {
+    "api/**/*.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  }
+}
